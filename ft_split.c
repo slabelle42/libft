@@ -6,7 +6,7 @@
 /*   By: slabelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 19:45:32 by slabelle          #+#    #+#             */
-/*   Updated: 2019/10/12 19:45:35 by slabelle         ###   ########.fr       */
+/*   Updated: 2019/10/24 15:50:56 by slabelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		ft_getcount(const char *s, char c)
 	return (0);
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		wrds_cnt;
 	char	**wrds;

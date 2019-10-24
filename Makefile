@@ -15,6 +15,7 @@ SRC +=	ft_tolower.c
 SRC +=	ft_toupper.c
 # str ______________
 SRC +=	ft_split.c
+SRC +=	ft_strchr.c
 SRC +=	ft_strdup.c
 SRC +=	ft_strjoin.c
 SRC +=	ft_strlcat.c

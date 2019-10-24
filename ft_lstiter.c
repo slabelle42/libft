@@ -1,13 +1,25 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: slabelle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/24 15:44:44 by slabelle          #+#    #+#             */
+/*   Updated: 2019/10/24 16:05:12 by slabelle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    ft_lstiter(t_list *lst, void (*f)(void *))
+#include "libft_bonus.h"
+
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    if (lst && f)
-    {
-    	while (lst)
-    	{
-    		f(lst);
-    		lst = lst->next;
-    	}
-    }
+	if (lst && f)
+	{
+		while (lst)
+		{
+			f(lst);
+			lst = lst->next;
+		}
+	}
 }
