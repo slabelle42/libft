@@ -58,7 +58,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rc $@ $^
+	@ar rc $@ $?
 	@ranlib $@
 
 $(OBJ): $(SRC)
@@ -67,7 +67,7 @@ $(OBJ): $(SRC)
 bonus: $(NAME)
 
 clean:
-	@rm -f $(OBJ)
+	@rm -f *.o
 
 fclean: clean
 	@rm -f $(NAME)
