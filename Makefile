@@ -41,7 +41,7 @@ SRC +=	ft_putchar_fd.c
 SRC +=	ft_putendl_fd.c
 SRC +=	ft_putnbr_fd.c
 SRC +=	ft_putstr_fd.c
-# lst ___________________
+# lst _________________________
 ifeq ($(MAKECMDGOALS), bonus)
 SRC +=	ft_lstadd_back_bonus.c
 SRC +=	ft_lstadd_front_bonus.c
