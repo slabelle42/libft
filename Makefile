@@ -41,23 +41,25 @@ SRC +=	ft_putchar_fd.c
 SRC +=	ft_putendl_fd.c
 SRC +=	ft_putnbr_fd.c
 SRC +=	ft_putstr_fd.c
-# lst _________________________
+# lst ___________________
 ifeq ($(MAKECMDGOALS), bonus)
-SRC +=	ft_lstadd_back_bonus.c
-SRC +=	ft_lstadd_front_bonus.c
-SRC +=	ft_lstclear_bonus.c
-SRC +=	ft_lstdelone_bonus.c
-SRC +=	ft_lstiter_bonus.c
-SRC +=	ft_lstlast_bonus.c
-SRC +=	ft_lstmap_bonus.c
-SRC +=	ft_lstnew_bonus.c
-SRC +=	ft_lstsize_bonus.c
+SRC +=	ft_lstadd_back.c
+SRC +=	ft_lstadd_front.c
+SRC +=	ft_lstclear.c
+SRC +=	ft_lstdelone.c
+SRC +=	ft_lstiter.c
+SRC +=	ft_lstlast.c
+SRC +=	ft_lstmap.c
+SRC +=	ft_lstnew.c
+SRC +=	ft_lstsize.c
 endif
 
 OBJ_DIR = obj/
 OBJ_NAME = $(SRC:.c=.o)
 
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_NAME))
+
+MAIN = main.c
 
 all: $(NAME)
 
@@ -66,15 +68,15 @@ $(NAME): $(OBJ)
 	@ranlib $@
 	@echo "Indexing ... OK"
 
-$(OBJ_DIR)%.o: %.c
-	@gcc $(FLAG) -c $? -o $@
-	@echo "Compiling" [$?]  "... OK"
-
 $(OBJ): | $(OBJ_DIR)
 
 $(OBJ_DIR):
 	@mkdir $@
 	@echo "Creating OBJ directory ... OK"
+
+$(OBJ_DIR)%.o: %.c
+	@gcc $(FLAG) -c $? -o $@
+	@echo "Compiling" [$?]  "... OK"
 
 bonus: $(NAME)
 
@@ -85,6 +87,10 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 
+exe:
+	@gcc -o libft $(MAIN) -L. -lft
+	@echo "Creating executable ... OK"
+
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all bonus clean fclean exe re
