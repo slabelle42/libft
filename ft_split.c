@@ -63,7 +63,7 @@ char	**ft_split(char const *s, char c)
 	if (!(wrds = malloc(sizeof(char *) * (wrds_cnt + 1))))
 		return (NULL);
 	i = 0;
-	while (i < wrds_cnt)
+	while (*s && i < wrds_cnt)
 	{
 		while (*s && *s == c)
 			s++;
