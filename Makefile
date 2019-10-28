@@ -1,7 +1,7 @@
 NAME = libft.a
 
-MAIN = main.c
 EXE = libft
+MAIN = main.c
 
 FLAG = -Wall -Wextra -Werror
 
