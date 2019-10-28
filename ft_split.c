@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_getword(char const *s, char c)
+char	*ft_split_getword(char const *s, char c)
 {
 	int		wrd_len;
 	char	*wrd;
@@ -33,7 +33,7 @@ char	*ft_getword(char const *s, char c)
 	return (wrd);
 }
 
-int		ft_getcount(const char *s, char c)
+int		ft_split_getcount(const char *s, char c)
 {
 	int		wrds_cnt;
 	int		i;
@@ -59,7 +59,7 @@ char	**ft_split(char const *s, char c)
 	char	**wrds;
 	int		i;
 
-	wrds_cnt = ft_getcount(s, c);
+	wrds_cnt = ft_split_getcount(s, c);
 	if (!(wrds = malloc(sizeof(char *) * (wrds_cnt + 1))))
 		return (NULL);
 	i = 0;
@@ -69,7 +69,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s && *s != c)
 		{
-			wrds[i] = ft_getword(s, c);
+			wrds[i] = ft_split_getword(s, c);
 			while (*s && *s != c)
 				s++;
 			i++;

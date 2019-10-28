@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t			ft_getlen(char const *s1, char const *set)
+size_t			ft_strtrim_getlen(char const *s1, char const *set)
 {
 	size_t			len;
 	int				next;
@@ -37,7 +37,7 @@ size_t			ft_getlen(char const *s1, char const *set)
 	return (len);
 }
 
-unsigned int	ft_getstart(char const *s1, char const *set)
+unsigned int	ft_strtrim_getstart(char const *s1, char const *set)
 {
 	unsigned int	start;
 	int				next;
@@ -67,7 +67,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	unsigned int	start;
 	size_t			len;
 
-	start = ft_getstart(s1, set);
-	len = ft_getlen(s1, set) - start;
+	start = ft_strtrim_getstart(s1, set);
+	len = ft_strtrim_getlen(s1, set) - start;
 	return (ft_substr(s1, start, len));
 }
