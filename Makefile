@@ -1,5 +1,8 @@
 NAME = libft.a
 
+MAIN = main.c
+EXE = libft
+
 FLAG = -Wall -Wextra -Werror
 
 # int ___________
@@ -41,25 +44,23 @@ SRC +=	ft_putchar_fd.c
 SRC +=	ft_putendl_fd.c
 SRC +=	ft_putnbr_fd.c
 SRC +=	ft_putstr_fd.c
-# lst ___________________
+# lst _________________________
 ifeq ($(MAKECMDGOALS), bonus)
-SRC +=	ft_lstadd_back.c
-SRC +=	ft_lstadd_front.c
-SRC +=	ft_lstclear.c
-SRC +=	ft_lstdelone.c
-SRC +=	ft_lstiter.c
-SRC +=	ft_lstlast.c
-SRC +=	ft_lstmap.c
-SRC +=	ft_lstnew.c
-SRC +=	ft_lstsize.c
+SRC +=	ft_lstadd_back_bonus.c
+SRC +=	ft_lstadd_front_bonus.c
+SRC +=	ft_lstclear_bonus.c
+SRC +=	ft_lstdelone_bonus.c
+SRC +=	ft_lstiter_bonus.c
+SRC +=	ft_lstlast_bonus.c
+SRC +=	ft_lstmap_bonus.c
+SRC +=	ft_lstnew_bonus.c
+SRC +=	ft_lstsize_bonus.c
 endif
 
 OBJ_DIR = obj/
 OBJ_NAME = $(SRC:.c=.o)
 
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_NAME))
-
-MAIN = main.c
 
 all: $(NAME)
 
@@ -86,9 +87,10 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -f $(EXE)
 
-exe:
-	@gcc -o libft $(MAIN) -L. -lft
+exe: $(NAME)
+	@gcc -o $(EXE) $(MAIN) -L. -lft
 	@echo "Creating executable ... OK"
 
 re: fclean all
