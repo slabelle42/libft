@@ -6,7 +6,7 @@
 /*   By: slabelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 15:49:37 by slabelle          #+#    #+#             */
-/*   Updated: 2019/10/24 16:05:27 by slabelle         ###   ########.fr       */
+/*   Updated: 2019/11/01 20:26:40 by slabelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	if (lst)
+	{
+		while (lst->next)
+			lst = lst->next;
+		return (lst);
+	}
+	return (NULL);
 }
