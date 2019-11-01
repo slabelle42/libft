@@ -6,7 +6,7 @@
 /*   By: slabelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 16:08:38 by slabelle          #+#    #+#             */
-/*   Updated: 2019/10/12 16:08:40 by slabelle         ###   ########.fr       */
+/*   Updated: 2019/11/01 17:32:10 by slabelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	size_t			len;
 
 	start = ft_strtrim_getstart(s1, set);
+	if (!(s1[start]))
+		return ("\0");
 	len = ft_strtrim_getlen(s1, set) - start;
 	return (ft_substr(s1, start, len));
 }
