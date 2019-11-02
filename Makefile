@@ -2,6 +2,7 @@ NAME = libft.a
 
 EXE = libft
 MAIN = main.c
+HDR = libft.h
 
 FLAG = -Wall -Wextra -Werror
 
@@ -76,7 +77,7 @@ $(OBJ_DIR):
 	@echo "Creating OBJ directory ... OK"
 
 $(OBJ_DIR)%.o: %.c
-	@gcc $(FLAG) -c $? -o $@
+	@gcc $(FLAG) -I $(HDR) -c $? -o $@
 	@echo "Compiling" [$?]  "... OK"
 
 bonus: $(NAME)
