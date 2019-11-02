@@ -65,11 +65,17 @@ unsigned int	ft_strtrim_getstart(char const *s1, char const *set)
 char			*ft_strtrim(char const *s1, char const *set)
 {
 	unsigned int	start;
+	char			*empty;
 	size_t			len;
 
 	start = ft_strtrim_getstart(s1, set);
 	if (!(s1[start]))
-		return ("\0");
+	{
+		if (!(empty = malloc(sizeof(char) * 1)))
+			return (NULL);
+		empty[0] = '\0';
+		return (empty);
+	}
 	len = ft_strtrim_getlen(s1, set) - start;
 	return (ft_substr(s1, start, len));
 }
