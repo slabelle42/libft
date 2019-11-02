@@ -2,8 +2,9 @@ NAME = libft.a
 
 FLAG = -Wall -Wextra -Werror
 
+SRC =
 # int ___________
-SRC =	ft_atoi.c
+SRC +=	ft_atoi.c
 SRC +=	ft_itoa.c	
 # char _____________
 SRC +=	ft_isalnum.c
