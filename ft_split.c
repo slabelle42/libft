@@ -95,7 +95,7 @@ char		**ft_split(char const *s, char c)
 		{
 			if (!(wrds[i] = ft_split_getword(s, c)))
 			{
-				ft_split_free(wrds, i);
+				ft_split_free(wrds, i - 1);
 				return (NULL);
 			}
 			s = ft_split_move(s, c, 1);
