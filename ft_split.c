@@ -12,7 +12,17 @@
 
 #include "libft.h"
 
-char	*ft_split_getword(char const *s, char c)
+void		ft_split_free(char **wrds, int i)
+{
+	while (i >= 0)
+	{
+		free(wrds[i]);
+		i--;
+	}
+	free(wrds);
+}
+
+char		*ft_split_getword(char const *s, char c)
 {
 	int		wrd_len;
 	char	*wrd;
@@ -33,7 +43,22 @@ char	*ft_split_getword(char const *s, char c)
 	return (wrd);
 }
 
-int		ft_split_getcount(const char *s, char c)
+const char	*ft_split_move(const char *s, char c, int is_wrd)
+{
+	if (is_wrd == 0)
+	{
+		while (*s && *s == c)
+			s++;
+	}
+	else if (is_wrd == 1)
+	{
+		while (*s && *s != c)
+			s++;
+	}
+	return (s);
+}
+
+int			ft_split_getcount(const char *s, char c)
 {
 	int		wrds_cnt;
 	int		i;
@@ -53,7 +78,7 @@ int		ft_split_getcount(const char *s, char c)
 	return (0);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	int		wrds_cnt;
 	char	**wrds;
@@ -65,13 +90,15 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (*s && i < wrds_cnt)
 	{
-		while (*s && *s == c)
-			s++;
+		s = ft_split_move(s, c, 0);
 		if (*s && *s != c)
 		{
-			wrds[i] = ft_split_getword(s, c);
-			while (*s && *s != c)
-				s++;
+			if (!(wrds[i] = ft_split_getword(s, c)))
+			{
+				ft_split_free(wrds, i);
+				return (NULL);
+			}
+			s = ft_split_move(s, c, 1);
 			i++;
 		}
 	}
