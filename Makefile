@@ -2,11 +2,11 @@ NAME = libft.a
 
 FLAG = -Wall -Wextra -Werror
 
-SRC =
-# int ___________
-SRC +=	ft_atoi.c
-SRC +=	ft_itoa.c	
-# char _____________
+############### [ SRC ] ###############
+# ( int )
+SRC =	ft_atoi.c
+SRC +=	ft_itoa.c
+# ( char )
 SRC +=	ft_isalnum.c
 SRC +=	ft_isalpha.c
 SRC +=	ft_isascii.c
@@ -14,7 +14,7 @@ SRC +=	ft_isdigit.c
 SRC +=	ft_isprint.c
 SRC +=	ft_tolower.c
 SRC +=	ft_toupper.c
-# str ______________
+# ( str )
 SRC +=	ft_split.c
 SRC +=	ft_strchr.c
 SRC +=	ft_strdup.c
@@ -28,7 +28,7 @@ SRC +=	ft_strnstr.c
 SRC +=	ft_strrchr.c
 SRC +=	ft_strtrim.c
 SRC +=	ft_substr.c
-# mem ______________
+# ( mem )
 SRC +=	ft_bzero.c
 SRC +=	ft_calloc.c
 SRC +=	ft_memccpy.c
@@ -37,30 +37,38 @@ SRC +=	ft_memcmp.c
 SRC +=	ft_memcpy.c
 SRC +=	ft_memmove.c
 SRC +=	ft_memset.c
-# put _________________
+# ( put )
 SRC +=	ft_putchar_fd.c
 SRC +=	ft_putendl_fd.c
 SRC +=	ft_putnbr_fd.c
 SRC +=	ft_putstr_fd.c
-# lst _________________________
-ifeq ($(MAKECMDGOALS), bonus)
-SRC +=	ft_lstadd_back_bonus.c
-SRC +=	ft_lstadd_front_bonus.c
-SRC +=	ft_lstclear_bonus.c
-SRC +=	ft_lstdelone_bonus.c
-SRC +=	ft_lstiter_bonus.c
-SRC +=	ft_lstlast_bonus.c
-SRC +=	ft_lstmap_bonus.c
-SRC +=	ft_lstnew_bonus.c
-SRC +=	ft_lstsize_bonus.c
-endif
+# ( lst )
+SRC_BONUS =		ft_lstadd_back_bonus.c
+SRC_BONUS +=	ft_lstadd_front_bonus.c
+SRC_BONUS +=	ft_lstclear_bonus.c
+SRC_BONUS +=	ft_lstdelone_bonus.c
+SRC_BONUS +=	ft_lstiter_bonus.c
+SRC_BONUS +=	ft_lstlast_bonus.c
+SRC_BONUS +=	ft_lstmap_bonus.c
+SRC_BONUS +=	ft_lstnew_bonus.c
+SRC_BONUS +=	ft_lstsize_bonus.c
 
-OBJ_DIR = obj/
-OBJ_NAME = $(SRC:.c=.o)
-OBJ = $(addprefix $(OBJ_DIR), $(OBJ_NAME))
+############### [ OBJ ] ###############
+# ( obj )
+OBJDIR = obj/
+OBJNAME = $(SRC:.c=.o)
+OBJ = $(addprefix $(OBJDIR), $(OBJNAME))
+# ( bonus )
+OBJNAME_BONUS = $(SRC_BONUS:.c=.o)
+OBJ_BONUS = $(addprefix $(OBJDIR), $(OBJNAME_BONUS))
 
+############### [ ! ] ###############
+HDR = libft.h libft_bonus.h
 EXE = libft
 MAIN = main_libft.c
+
+#####################################
+#####################################
 
 all: $(NAME)
 
@@ -75,8 +83,8 @@ $(OBJ_DIR):
 	@mkdir $@
 	@echo "Creating OBJ directory ... OK"
 
-$(OBJ_DIR)%.o: %.c
-	@gcc $(FLAG) -I. -c $? -o $@
+$(OBJ_DIR)%.o: %.c $(HDR)
+	@gcc $(FLAG) -c $< -o $@ -I $(HDR)
 	@echo "Compiling" [$?]  "... OK"
 
 bonus: $(NAME)
