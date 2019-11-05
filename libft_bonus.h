@@ -16,8 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-void				*ft_memcpy(void *dst, const void *src, size_t len);
-
 typedef struct		s_list
 {
 	void			*content;
