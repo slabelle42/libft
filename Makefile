@@ -2,6 +2,12 @@ NAME = libft.a
 
 FLAG = -Wall -Wextra -Werror
 
+HDR = libft.h libft_bonus.h
+HDR_BONUS
+
+EXE = libft
+MAIN = main_libft.c
+
 ############### [ SRC ] ###############
 # ( int )
 SRC =	ft_atoi.c
@@ -58,17 +64,9 @@ SRC_BONUS +=	ft_lstsize_bonus.c
 OBJDIR = obj/
 OBJNAME = $(SRC:.c=.o)
 OBJ = $(addprefix $(OBJDIR), $(OBJNAME))
-# ( bonus )
+# ( obj_bonus )
 OBJNAME_BONUS = $(SRC_BONUS:.c=.o)
 OBJ_BONUS = $(addprefix $(OBJDIR), $(OBJNAME_BONUS))
-
-############### [ ! ] ###############
-HDR = libft.h libft_bonus.h
-EXE = libft
-MAIN = main_libft.c
-
-#####################################
-#####################################
 
 all: $(NAME)
 
