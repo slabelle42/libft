@@ -2,9 +2,6 @@ NAME = libft.a
 
 FLAG = -Wall -Wextra -Werror
 
-EXE = libft_exe
-MAIN = main_libft.c
-
 # [ int ]
 SRC =	ft_atoi.c
 SRC +=	ft_itoa.c	
@@ -63,6 +60,9 @@ OBJ_NAME = $(SRC:.c=.o)
 # )
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_NAME))
 
+EXE = libft_eggs
+MAIN = main_libft.c
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -90,10 +90,10 @@ fclean: clean
 	@rm -f $(NAME)
 	@rm -f $(EXE)
 
-exe: $(NAME)
+re: fclean all
+
+eggs: $(NAME)
 	@gcc -o $(EXE) $(MAIN) -L. -lft
 	@echo "Creating executable ... OK"
 
-re: fclean all
-
-.PHONY: all bonus clean fclean exe re
+.PHONY: all bonus clean fclean re eggs
