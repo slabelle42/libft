@@ -1,7 +1,9 @@
 NAME = libft.a
-NAME_BONUS = libft_bonus.a
+
+FLAG = -Wall -Wextra -Werror
+
 HDR = libft.h
-HDR_BONUS = libft_bonus.h
+HDR_B = libft_bonus.h
 
 EXE = libft
 MAIN = main_libft.c
@@ -47,27 +49,24 @@ SRC +=	ft_putendl_fd.c
 SRC +=	ft_putnbr_fd.c
 SRC +=	ft_putstr_fd.c
 # ( lst )
-SRC_BONUS =		ft_lstadd_back_bonus.c
-SRC_BONUS +=	ft_lstadd_front_bonus.c
-SRC_BONUS +=	ft_lstclear_bonus.c
-SRC_BONUS +=	ft_lstdelone_bonus.c
-SRC_BONUS +=	ft_lstiter_bonus.c
-SRC_BONUS +=	ft_lstlast_bonus.c
-SRC_BONUS +=	ft_lstmap_bonus.c
-SRC_BONUS +=	ft_lstnew_bonus.c
-SRC_BONUS +=	ft_lstsize_bonus.c
+SRC_B =		ft_lstadd_back_bonus.c
+SRC_B +=	ft_lstadd_front_bonus.c
+SRC_B +=	ft_lstclear_bonus.c
+SRC_B +=	ft_lstdelone_bonus.c
+SRC_B +=	ft_lstiter_bonus.c
+SRC_B +=	ft_lstlast_bonus.c
+SRC_B +=	ft_lstmap_bonus.c
+SRC_B +=	ft_lstnew_bonus.c
+SRC_B +=	ft_lstsize_bonus.c
 
 ############### [ OBJ ] ###############
+OBJ_DIR =		obj/
 # ( obj )
-OBJ_DIR =			obj/
-OBJ_NAME =			$(SRC:.c=.o)
-OBJ =				$(addprefix $(OBJ_DIR), $(OBJ_NAME))
-# ( obj_bonus )
-OBJ_NAME_BONUS =	$(SRC_BONUS:.c=.o)
-OBJ_BONUS =			$(addprefix $(OBJ_DIR), $(OBJ_NAME))
-OBJ_BONUS +=		$(addprefix $(OBJ_DIR), $(OBJ_NAME_BONUS))
-
-FLAG = -Wall -Wextra -Werror
+OBJ_NAME =		$(SRC:.c=.o)
+OBJ =			$(addprefix $(OBJ_DIR), $(OBJ_NAME))
+# ( bonus )
+OBJ_NAME_B =	$(SRC_B:.c=.o)
+OBJ_B =			$(addprefix $(OBJ_DIR), $(OBJ_NAME_B))
 
 all: $(NAME)
 
@@ -80,20 +79,13 @@ $(OBJ): | $(OBJ_DIR)
 
 $(OBJ_DIR):
 	@mkdir $@
-	@echo "Creating OBJ directory ... OK"
+	@echo "Creating obj/ directory ... OK"
 
 $(OBJ_DIR)%.o: %.c $(HDR)
-	@gcc $(FLAG) $(HDR) -c $? -o $@
+	@gcc $(FLAG) -I $(HDR) -o $@ -c $?
 	@echo "Compiling" [$?]  "... OK"
 
-bonus: $(NAME_BONUS)
-
-$(NAME_BONUS): $(OBJ_BONUS)
-	@ar rc $@ $?
-	@ranlib $@
-	@echo "Indexing ... OK"
-
-$(OBJ_BONUS): | $(OBJ_DIR)
+bonus:
 
 clean:
 	@rm -rf $(OBJ_DIR)
