@@ -2,7 +2,7 @@ NAME = libft.a
 
 FLAG = -Wall -Wextra -Werror
 
-EXE = libft
+EXE = libft_exe
 MAIN = main_libft.c
 
 # [ int ]
