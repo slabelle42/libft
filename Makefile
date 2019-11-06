@@ -61,7 +61,7 @@ SRC_B +=	ft_lstsize_bonus.c
 
 ############### [ OBJ ] ###############
 OBJ_DIR =		obj/
-# ( obj )
+# ( basics )
 OBJ_NAME =		$(SRC:.c=.o)
 OBJ =			$(addprefix $(OBJ_DIR), $(OBJ_NAME))
 # ( bonus )
