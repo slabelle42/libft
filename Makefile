@@ -8,7 +8,7 @@ HDR_B = libft_bonus.h
 EXE = libft
 MAIN = main_libft.c
 
-############### [ SRC ] ###############
+########################## [ SRC ] #########################
 # ( int )
 SRC =	ft_atoi.c
 SRC +=	ft_itoa.c
@@ -59,7 +59,7 @@ SRC_B +=	ft_lstmap_bonus.c
 SRC_B +=	ft_lstnew_bonus.c
 SRC_B +=	ft_lstsize_bonus.c
 
-############### [ OBJ ] ###############
+########################## [ OBJ ] #########################
 OBJ_DIR =		obj/
 # ( basics )
 OBJ_NAME =		$(SRC:.c=.o)
@@ -67,6 +67,8 @@ OBJ =			$(addprefix $(OBJ_DIR), $(OBJ_NAME))
 # ( bonus )
 OBJ_NAME_B =	$(SRC_B:.c=.o)
 OBJ_B =			$(addprefix $(OBJ_DIR), $(OBJ_NAME_B))
+
+############################################################
 
 all: $(NAME)
 
@@ -85,7 +87,12 @@ $(OBJ_DIR)%.o: %.c $(HDR)
 	@gcc $(FLAG) -I $(HDR) -o $@ -c $?
 	@echo "Compiling" [$?]  "... OK"
 
-bonus:
+bonus: $(OBJ) $(OBJ_B)
+	@ar rc $@ $?
+	@ranlib $@
+	@echo "Indexing ... OK"
+
+$(OBJ_B): | $(OBJ_DIR)
 
 clean:
 	@rm -rf $(OBJ_DIR)
