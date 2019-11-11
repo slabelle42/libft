@@ -6,7 +6,7 @@
 /*   By: slabelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 12:06:49 by slabelle          #+#    #+#             */
-/*   Updated: 2019/11/11 17:57:04 by slabelle         ###   ########.fr       */
+/*   Updated: 2019/11/11 17:59:24 by slabelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t n, size_t size)
 {
 	void	*mem;
 
-	if (!(mem = malloc(sizeof(size) * n)))
+	if (!(mem = malloc(size * n)))
 		return (NULL);
 	ft_bzero(mem, size * n);
 	return (mem);
