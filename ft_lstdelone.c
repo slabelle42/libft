@@ -6,7 +6,7 @@
 /*   By: slabelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 15:47:37 by slabelle          #+#    #+#             */
-/*   Updated: 2019/10/24 16:04:57 by slabelle         ###   ########.fr       */
+/*   Updated: 2019/11/11 18:28:31 by slabelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	{
 		del(lst->content);
 		free(lst);
-		lst = NULL;
 	}
 }
