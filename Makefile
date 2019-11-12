@@ -81,6 +81,10 @@ $(OBJ_DIR)%.o: %.c
 
 bonus: $(NAME)
 
+exe: $(NAME)
+	@gcc -o $(EXE) $(MAIN) -L. -lft
+	@echo "Creating executable ... OK"
+
 clean:
 	@rm -rf $(OBJ_DIR)
 	@echo "Cleaning ... OK"
@@ -91,8 +95,4 @@ fclean: clean
 
 re: fclean all
 
-exe: $(NAME)
-	@gcc -o $(EXE) $(MAIN) -L. -lft
-	@echo "Creating executable ... OK"
-
-.PHONY: all bonus clean fclean re exe
+.PHONY: all bonus exe clean fclean re
