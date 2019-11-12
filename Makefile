@@ -54,14 +54,13 @@ SRC +=	ft_lstnew.c
 SRC +=	ft_lstsize.c
 endif
 
-# (
+# [ obj ]
 OBJ_DIR = obj/
 OBJ_NAME = $(SRC:.c=.o)
-# )
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_NAME))
 
-EXE = libft_eggs
-MAIN = main_libft.c
+EXE = libft
+MAIN = main.c
 
 all: $(NAME)
 
@@ -92,8 +91,8 @@ fclean: clean
 
 re: fclean all
 
-eggs: $(NAME)
+exe: $(NAME)
 	@gcc -o $(EXE) $(MAIN) -L. -lft
 	@echo "Creating executable ... OK"
 
-.PHONY: all bonus clean fclean re eggs
+.PHONY: all bonus clean fclean re exe
