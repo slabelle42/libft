@@ -81,7 +81,7 @@ $(OBJ_DIR)%.o: %.c
 
 bonus: $(NAME)
 
-exe: $(NAME)
+exe:
 	@gcc -o $(EXE) $(MAIN) -L. -lft
 	@echo "Creating executable ... OK"
 
