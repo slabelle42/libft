@@ -2,6 +2,9 @@ NAME = libft.a
 
 FLAG = -Wall -Wextra -Werror
 
+EXE = libft
+MAIN = main.c
+
 # [ int ]
 SRC =	ft_atoi.c
 SRC +=	ft_itoa.c	
@@ -58,9 +61,6 @@ endif
 OBJ_DIR = obj/
 OBJ_NAME = $(SRC:.c=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_NAME))
-
-EXE = libft
-MAIN = main.c
 
 all: $(NAME)
 
