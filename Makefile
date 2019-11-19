@@ -73,7 +73,7 @@ $(OBJ): | $(OBJ_DIR)
 
 $(OBJ_DIR):
 	@mkdir $@
-	@echo "Creating OBJ directory ... OK"
+	@echo "Creating obj/ directory ... OK"
 
 $(OBJ_DIR)%.o: %.c
 	@gcc $(FLAG) -I. -c $? -o $@
