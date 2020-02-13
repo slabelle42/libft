@@ -31,13 +31,9 @@ lstsize.c
 
 ## Usage
 
-```console
-git clone https://github.com/slabelle42/libft.git
-cd libft
-make
-```
+  git clone https://github.com/slabelle42/libft.git
+  cd libft
+  make
 
 + Linked list functions
-```console
-make bonus
-```
+  make bonus
