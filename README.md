@@ -37,7 +37,7 @@ lstsize.c
   make
 ```
 
-+ Linked list functions
+Linked list functions
 ``` console
   make bonus
 ```
