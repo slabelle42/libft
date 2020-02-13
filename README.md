@@ -49,6 +49,6 @@ With linked list functions
   make bonus
 ```
 
-## About
+## More
 
 This is [42](https://www.42.fr/)
