@@ -6,11 +6,11 @@ Disclaimer: Reinventing the wheel is bad, 42 makes us do this just so we can hav
 
 ## List of functions
 
-1.  Libc & additional functions
-*"INT"*
+Libc & additional functions
+1.  **"INT"**
 atoi.c
 itoa.c
-*"CHAR"*
+2.  **"CHAR"**
 isalnum.c
 isalpha.c
 isascii.c
@@ -18,7 +18,7 @@ isdigit.c
 isprint.c
 tolower.c
 toupper.c
-*"STR"*
+3.  **"STR"**
 ft_split.c
 strchr.c
 strdup.c
@@ -32,7 +32,7 @@ strnstr.c
 strrchr.c
 strtrim.c
 substr.c
-*"MEM"*
+4.  **"MEM"**
 bzero.c
 calloc.c
 memccpy.c
@@ -41,7 +41,7 @@ memcmp.c
 memcpy.c
 memmove.c
 memset.c
-*"PUT"*
+5.  **"PUT"**
 ft_putchar_fd.c
 ft_putendl_fd.c
 ft_putnbr_fd.c
