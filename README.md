@@ -6,7 +6,7 @@ Disclaimer: *Reinventing the wheel is bad, 42 makes us do this just so we can ha
 
 ## List of functions
 
-Libc & additional functions
+Libc & additional functions :
 
 + **"INT"**
 atoi.c itoa.c
@@ -28,7 +28,7 @@ memcmp.c memcpy.c memmove.c memset.c
 + **"PUT"**
 putchar_fd.c putendl_fd.c putnbr_fd.c putstr_fd.c
 
-Linked list functions (bonus)
+Linked list functions (bonus) :
 
 + **"LST"**
 lstadd_back.c lstadd_front.c lstclear.c lstdelone.c
@@ -37,14 +37,14 @@ lstsize.c
 
 ## Usage
 
-Download the project and create the library
+Download the project and create the library :
 ```
   git clone https://github.com/slabelle42/libft.git
   cd libft
   make
 ```
 
-With linked list functions
+With linked list functions :
 ```
   make bonus
 ```
