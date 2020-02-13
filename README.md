@@ -48,4 +48,6 @@ Linked list functions
   make bonus
 ```
 
+## About
+
 This is [42](https://www.42.fr/)
