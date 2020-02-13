@@ -8,29 +8,29 @@ Disclaimer: *Reinventing the wheel is bad, 42 makes us do this just so we can ha
 
 Libc & additional functions
 
-1.  **"INT"**
++ **"INT"**
 atoi.c itoa.c
 
-2.  **"CHAR"**
++ **"CHAR"**
 isalnum.c isalpha.c isascii.c isdigit.c
 isprint.c tolower.c toupper.c
 
-3.  **"STR"**
++ **"STR"**
 ft_split.c strchr.c strdup.c strjoin.c
 strlcat.c strlcpy.c strlen.c strmapi.c
 strncmp.c strnstr.c strrchr.c strtrim.c
 substr.c
 
-4.  **"MEM"**
++ **"MEM"**
 bzero.c calloc.c memccpy.c memchr.c
 memcmp.c memcpy.c memmove.c memset.c
 
-5.  **"PUT"**
++ **"PUT"**
 putchar_fd.c putendl_fd.c putnbr_fd.c putstr_fd.c
 
 Linked list functions (bonus)
 
-1.  **"LST"**
++ **"LST"**
 lstadd_back.c lstadd_front.c lstclear.c lstdelone.c
 lstiter.c lstlast.c lstmap.c lstnew.c
 lstsize.c
