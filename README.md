@@ -37,13 +37,14 @@ lstsize.c
 
 ## Usage
 
+Download the project and create the library
 ```
   git clone https://github.com/slabelle42/libft.git
   cd libft
   make
 ```
 
-Linked list functions
+With linked list functions
 ```
   make bonus
 ```
