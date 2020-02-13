@@ -4,7 +4,6 @@ Libft is the first project when you entered 42 : you have to re-create some stan
 
 Disclaimer: *Reinventing the wheel is bad, 42 makes us do this just so we can have a deeper understanding of data structures and basic algorithms. At 42 we're not allowed to use some standard libraries on our projects, so we have to keep growing this library with our own functions as we go farther in the program.*
 
-
 ## List of functions
 
 Libc & additional functions
@@ -29,7 +28,6 @@ Linked list functions (bonus)
 lstadd_back.c lstadd_front.c lstclear.c lstdelone.c
 lstiter.c lstlast.c lstmap.c lstnew.c
 lstsize.c
-
 
 ## Usage
 
