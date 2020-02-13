@@ -8,36 +8,42 @@ Disclaimer: *Reinventing the wheel is bad, 42 makes us do this just so we can ha
 
 Libc & additional functions
 1.  **"INT"**
-  atoi.c itoa.c
+
+atoi.c itoa.c
 2.  **"CHAR"**
-  isalnum.c isalpha.c isascii.c isdigit.c
+
+isalnum.c isalpha.c isascii.c isdigit.c
 isprint.c tolower.c toupper.c
+
 3.  **"STR"**
-  ft_split.c strchr.c strdup.c strjoin.c
+ft_split.c strchr.c strdup.c strjoin.c
 strlcat.c strlcpy.c strlen.c strmapi.c
 strncmp.c strnstr.c strrchr.c strtrim.c
+
 substr.c
 4.  **"MEM"**
-  bzero.c calloc.c memccpy.c memchr.c
+bzero.c calloc.c memccpy.c memchr.c
 memcmp.c memcpy.c memmove.c memset.c
+
 5.  **"PUT"**
-  ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
+ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
 
 Linked list functions (bonus)
-6.  **"LST"**
-  lstadd_back.c lstadd_front.c lstclear.c lstdelone.c
+1.  **"LST"**
+
+lstadd_back.c lstadd_front.c lstclear.c lstdelone.c
 lstiter.c lstlast.c lstmap.c lstnew.c
 lstsize.c
 
 ## Usage
 
-```console
+```
   git clone https://github.com/slabelle42/libft.git
   cd libft
   make
 ```
 
 Linked list functions
-``` console
+```
   make bonus
 ```
