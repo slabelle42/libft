@@ -51,4 +51,4 @@ With linked list functions :
 
 ## More
 
-This is [42](https://www.42.fr/)
+This is [42](https://www.42.fr/).
