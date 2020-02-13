@@ -26,7 +26,7 @@ bzero.c calloc.c memccpy.c memchr.c
 memcmp.c memcpy.c memmove.c memset.c
 
 5.  **"PUT"**
-ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
+putchar_fd.c putendl_fd.c putnbr_fd.c putstr_fd.c
 
 Linked list functions (bonus)
 
