@@ -24,6 +24,20 @@ memcmp.c memcpy.c memmove.c memset.c
 ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
 
 Linked list functions (bonus)
+6.  **"LST"**
 lstadd_back.c lstadd_front.c lstclear.c lstdelone.c
 lstiter.c lstlast.c lstmap.c lstnew.c
 lstsize.c
+
+## Usage
+
+```console
+git clone https://github.com/slabelle42/libft.git
+cd libft
+make
+```
+
++ Linked list functions
+```console
+make bonus
+```
