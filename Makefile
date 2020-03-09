@@ -33,6 +33,7 @@ SRC +=	ft_substr.c
 # [ mem ]
 SRC +=	ft_bzero.c
 SRC +=	ft_calloc.c
+SRC +=	ft_memalloc.c
 SRC +=	ft_memccpy.c
 SRC +=	ft_memchr.c
 SRC +=	ft_memcmp.c
