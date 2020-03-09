@@ -43,6 +43,7 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 
 void				ft_bzero(void *str, size_t len);
 void				*ft_calloc(size_t nbr, size_t size);
+void				*ft_memalloc(size_t size);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t len);
 void				*ft_memchr(const void *str, int c, size_t len);
 int					ft_memcmp(const void *s1, const void *s2, size_t len);
